@@ -13,91 +13,131 @@
 
 body{
     margin:0;
-    padding:15px;
+    padding:12px;
     background:#f3f6fa;
     font-family:"Noto Sans KR",Arial,sans-serif;
-    color:#263238;
+    color:#222;
 }
 
 .container{
-    max-width:600px;
+    max-width:700px;
     margin:auto;
 }
 
 .title{
     background:linear-gradient(135deg,#4f8cff,#7b61ff);
     color:white;
-    padding:22px 15px;
-    border-radius:20px;
+    padding:20px 10px;
+    border-radius:18px;
     text-align:center;
-    margin-bottom:16px;
-    box-shadow:0 6px 18px rgba(0,0,0,.12);
+    margin-bottom:14px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
 .title h1{
     margin:0;
-    font-size:21px;
-    line-height:1.4;
+    font-size:20px;
 }
 
 .title p{
-    margin:7px 0 0;
+    margin:6px 0 0;
     font-size:13px;
-    opacity:.9;
 }
 
-.group{
+/* 표 */
+.table-wrap{
     background:white;
-    border-radius:18px;
-    margin-bottom:13px;
-    padding:16px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    border-left:7px solid;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
-.group1{border-color:#4f8cff;}
-.group2{border-color:#35b978;}
-.group3{border-color:#f0b429;}
-.group4{border-color:#ff7a59;}
-
-.group-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
+table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
 }
 
-.group-name{
-    font-size:18px;
+th{
+    background:#eef3f9;
+    padding:11px 4px;
+    font-size:13px;
+    border-bottom:1px solid #dce3eb;
+}
+
+th:first-child{
+    width:19%;
+}
+
+th:nth-child(2){
+    width:43%;
+}
+
+th:nth-child(3),
+th:nth-child(4),
+th:nth-child(5){
+    width:12.6%;
+}
+
+td{
+    padding:13px 4px;
+    text-align:center;
+    border-bottom:1px solid #edf0f3;
+    font-size:14px;
+}
+
+tr:last-child td{
+    border-bottom:none;
+}
+
+/* 조 */
+.group{
     font-weight:800;
+    font-size:15px;
 }
 
 .time{
-    background:#f1f4f8;
-    padding:6px 10px;
-    border-radius:10px;
-    font-size:12px;
+    font-size:13px;
     font-weight:600;
+    line-height:1.5;
 }
 
-.names{
-    font-size:17px;
-    line-height:1.8;
+/* 이름 */
+.name{
+    text-align:left;
     font-weight:600;
+    line-height:1.6;
     word-break:keep-all;
 }
 
+/* 토·일 표시 */
 .weekend{
-    color:#e05252;
     font-weight:800;
-    white-space:nowrap;
+}
+
+/* 체크박스 */
+.check{
+    width:25px;
+    height:25px;
+    cursor:pointer;
+    accent-color:#4f8cff;
+}
+
+/* 완료된 줄 */
+.done{
+    background:#f5fbf7;
+}
+
+.done .name{
+    text-decoration:line-through;
+    opacity:.6;
 }
 
 .footer{
     text-align:center;
     color:#8a949e;
     font-size:11px;
-    margin:18px 0 5px;
+    margin:16px 0 5px;
 }
 </style>
 </head>
@@ -108,64 +148,152 @@ body{
 
     <div class="title">
         <h1>🌸 「영원한 행복」 지역대회</h1>
-        <p>청소 자원봉사</p>
+        <p>청소 자원봉사 참여표</p>
     </div>
 
-    <!-- 1조 -->
-    <div class="group group1">
-        <div class="group-top">
-            <div class="group-name">🩵 1조</div>
-            <div class="time">오전 회기 전</div>
-        </div>
+    <div class="table-wrap">
 
-        <div class="names">
-            노을 · 노아민 ·
-            <span class="weekend">강경운 (토·일)</span> ·
-            <span class="weekend">김영옥 (토·일)</span>
-        </div>
-    </div>
+        <table>
 
-    <!-- 2조 -->
-    <div class="group group2">
-        <div class="group-top">
-            <div class="group-name">💚 2조</div>
-            <div class="time">오전 회기 중</div>
-        </div>
+            <thead>
+                <tr>
+                    <th>조</th>
+                    <th>봉사자</th>
+                    <th>금<br>요일</th>
+                    <th>토<br>요일</th>
+                    <th>일<br>요일</th>
+                </tr>
+            </thead>
 
-        <div class="names">
-            문홍균 · 문정훈
-        </div>
-    </div>
+            <tbody>
 
-    <!-- 3조 -->
-    <div class="group group3">
-        <div class="group-top">
-            <div class="group-name">💛 3조</div>
-            <div class="time">휴회 시간</div>
-        </div>
+                <!-- 1조 -->
+                <tr>
+                    <td class="group">🩵 1조<br>
+                        <span class="time">오전 회기 전</span>
+                    </td>
 
-        <div class="names">
-            장미정 · 문수현 · 강세민
-        </div>
-    </div>
+                    <td class="name">
+                        노을 · 노아민 ·<br>
+                        강경운 (토·일) ·<br>
+                        김영옥 (토·일)
+                    </td>
 
-    <!-- 4조 -->
-    <div class="group group4">
-        <div class="group-top">
-            <div class="group-name">🧡 4조</div>
-            <div class="time">오후 회기 중</div>
-        </div>
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
 
-        <div class="names">
-            김형욱 · 서혜정
-        </div>
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+                </tr>
+
+                <!-- 2조 -->
+                <tr>
+                    <td class="group">💚 2조<br>
+                        <span class="time">오전 회기 중</span>
+                    </td>
+
+                    <td class="name">
+                        문홍균 · 문정훈
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+                </tr>
+
+                <!-- 3조 -->
+                <tr>
+                    <td class="group">💛 3조<br>
+                        <span class="time">휴회 시간</span>
+                    </td>
+
+                    <td class="name">
+                        장미정 · 문수현 · 강세민
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+                </tr>
+
+                <!-- 4조 -->
+                <tr>
+                    <td class="group">🧡 4조<br>
+                        <span class="time">오후 회기 중</span>
+                    </td>
+
+                    <td class="name">
+                        김형욱 · 서혜정
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+
+                    <td>
+                        <input type="checkbox" class="check">
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
     </div>
 
     <div class="footer">
-        「영원한 행복」 지역대회 청소 자원봉사
+        체크하면 참여 완료로 표시됩니다.
     </div>
 
 </div>
+
+
+<script>
+
+/* 체크하면 완료 표시 */
+document.querySelectorAll(".check").forEach(function(check){
+
+    check.addEventListener("change",function(){
+
+        const row = this.closest("tr");
+
+        if(this.checked){
+            row.classList.add("done");
+        }else{
+            row.classList.remove("done");
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
