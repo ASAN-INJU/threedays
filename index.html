@@ -23,7 +23,7 @@ body{
     width:100%;
     max-width:900px;
     margin:auto;
-    padding:10px;
+    padding:8px;
 }
 
 /* 제목 */
@@ -31,21 +31,20 @@ body{
     background:linear-gradient(135deg,#34495e,#5d7488);
     color:white;
     text-align:center;
-    padding:18px 8px;
+    padding:15px 8px;
     border-radius:14px;
-    margin-bottom:10px;
+    margin-bottom:8px;
     box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
 .title-main{
-    font-size:21px;
+    font-size:20px;
     font-weight:900;
 }
 
 .title-sub{
-    margin-top:5px;
-    font-size:13px;
-    opacity:.95;
+    margin-top:4px;
+    font-size:12px;
 }
 
 /* 표 */
@@ -62,13 +61,30 @@ table{
     table-layout:fixed;
 }
 
-/* 제목 */
+/* 열 */
+.col-group{
+    width:42px;
+}
+
+.col-time{
+    width:85px;
+}
+
+.col-name{
+    width:auto;
+}
+
+.col-day{
+    width:55px;
+}
+
+/* 머리글 */
 th{
     background:#e9edf1;
     color:#34495e;
-    font-size:12px;
+    font-size:11px;
     font-weight:900;
-    padding:9px 3px;
+    padding:8px 2px;
     border-right:1px solid #d4d9de;
     border-bottom:1px solid #d4d9de;
 }
@@ -77,26 +93,9 @@ th:last-child{
     border-right:0;
 }
 
-/* 너비 */
-.col-group{
-    width:43px;
-}
-
-.col-time{
-    width:92px;
-}
-
-.col-name{
-    width:auto;
-}
-
-.col-day{
-    width:58px;
-}
-
 /* 내용 */
 td{
-    padding:9px 4px;
+    padding:9px 3px;
     text-align:center;
     border-right:1px solid #e0e4e7;
     border-bottom:1px solid #e0e4e7;
@@ -115,11 +114,11 @@ tr:last-child td{
 .group{
     background:#f5f7f9;
     color:#34495e;
-    font-size:14px;
+    font-size:13px;
     font-weight:900;
 }
 
-/* 시간 */
+/* 담당 */
 .time{
     font-size:11px;
     font-weight:800;
@@ -127,7 +126,7 @@ tr:last-child td{
     color:#555;
 }
 
-/* 사람 */
+/* 이름 */
 .names{
     text-align:left;
     line-height:1.8;
@@ -135,14 +134,14 @@ tr:last-child td{
 
 .person{
     display:inline-block;
-    margin:2px 2px;
+    margin:2px 1px;
     padding:3px 6px;
     border-radius:7px;
-    font-size:12px;
+    font-size:11px;
     font-weight:800;
 }
 
-/* 사람별 색 */
+/* 이름별 색 */
 .p1{
     background:#e7f0ff;
     color:#2455a4;
@@ -183,31 +182,34 @@ tr:last-child td{
     color:#46515c;
 }
 
-/* 요일 */
+/* 요일 색 */
 .friday{
-    color:#3d64a0;
+    color:#4267a8;
 }
 
 .saturday{
-    color:#df7419;
+    color:#e67e22;
 }
 
 .sunday{
     color:#8b52a5;
 }
 
-/* 체크박스 */
+/* 체크 */
 .check{
-    width:29px;
-    height:29px;
+    width:27px;
+    height:27px;
+
     appearance:none;
     -webkit-appearance:none;
+
     border:2px solid #c7cdd2;
     border-radius:8px;
+
     background:white;
+
     cursor:pointer;
     position:relative;
-    vertical-align:middle;
 }
 
 .check:checked{
@@ -217,46 +219,48 @@ tr:last-child td{
 
 .check:checked::after{
     content:"✓";
+
     position:absolute;
-    left:4px;
+
+    left:3px;
     top:-2px;
+
     color:white;
-    font-size:21px;
+
+    font-size:20px;
     font-weight:900;
 }
 
-/* 토·일 담당 표시 */
-.assigned{
-    display:block;
-    margin-top:3px;
-    font-size:9px;
-    color:#e67e22;
-    font-weight:800;
-}
-
-/* 아래 현황 */
+/* 하단 */
 .bottom{
-    margin-top:10px;
+    margin-top:8px;
+
     background:white;
+
     border-radius:14px;
-    padding:12px;
+
+    padding:11px;
+
     text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.07);
 }
 
 .count{
-    font-size:14px;
+    font-size:13px;
     font-weight:900;
     color:#34495e;
 }
 
 .count span{
     color:#4caf50;
-    font-size:18px;
+    font-size:17px;
 }
 
 .buttons{
-    margin-top:9px;
+    margin-top:8px;
+
     display:flex;
     justify-content:center;
     gap:7px;
@@ -265,7 +269,9 @@ tr:last-child td{
 button{
     border:0;
     border-radius:8px;
-    padding:9px 14px;
+
+    padding:8px 13px;
+
     font-size:12px;
     font-weight:800;
 }
@@ -284,11 +290,11 @@ button{
 @media(max-width:500px){
 
     .container{
-        padding:7px;
+        padding:5px;
     }
 
     .title{
-        padding:14px 5px;
+        padding:13px 5px;
     }
 
     .title-main{
@@ -301,24 +307,24 @@ button{
 
     th{
         font-size:10px;
-        padding:8px 2px;
+        padding:7px 1px;
     }
 
     td{
         font-size:10px;
-        padding:8px 2px;
+        padding:7px 2px;
     }
 
     .col-group{
-        width:36px;
+        width:35px;
     }
 
     .col-time{
-        width:78px;
+        width:75px;
     }
 
     .col-day{
-        width:43px;
+        width:42px;
     }
 
     .group{
@@ -332,7 +338,6 @@ button{
     .person{
         font-size:10px;
         padding:3px 5px;
-        margin:1px;
     }
 
     .check{
@@ -344,7 +349,6 @@ button{
         font-size:18px;
         left:3px;
     }
-
 }
 </style>
 </head>
@@ -373,6 +377,7 @@ button{
         <table>
 
             <thead>
+
                 <tr>
 
                     <th class="col-group">
@@ -400,14 +405,13 @@ button{
                     </th>
 
                 </tr>
+
             </thead>
 
 
             <tbody>
 
-                <!-- =====================
-                     1조
-                ====================== -->
+                <!-- 1조 -->
 
                 <tr>
 
@@ -447,35 +451,21 @@ button{
                     </td>
 
                     <td>
-
                         <input
                             type="checkbox"
                             class="check">
-
-                        <span class="assigned">
-                            강경운 · 김영옥
-                        </span>
-
                     </td>
 
                     <td>
-
                         <input
                             type="checkbox"
                             class="check">
-
-                        <span class="assigned">
-                            강경운 · 김영옥
-                        </span>
-
                     </td>
 
                 </tr>
 
 
-                <!-- =====================
-                     2조
-                ====================== -->
+                <!-- 2조 -->
 
                 <tr>
 
@@ -521,9 +511,7 @@ button{
                 </tr>
 
 
-                <!-- =====================
-                     3조
-                ====================== -->
+                <!-- 3조 -->
 
                 <tr>
 
@@ -572,9 +560,7 @@ button{
                 </tr>
 
 
-                <!-- =====================
-                     4조
-                ====================== -->
+                <!-- 4조 -->
 
                 <tr>
 
@@ -670,9 +656,7 @@ button{
 
 <script>
 
-/* =========================
-   체크박스
-========================= */
+/* 체크박스 */
 
 const checks =
     document.querySelectorAll(".check");
@@ -685,13 +669,12 @@ const total =
 
 
 /* 전체 개수 */
+
 total.textContent =
     checks.length;
 
 
-/* =========================
-   저장된 체크 불러오기
-========================= */
+/* 저장된 상태 불러오기 */
 
 checks.forEach((check,index)=>{
 
@@ -707,9 +690,7 @@ checks.forEach((check,index)=>{
 });
 
 
-/* =========================
-   업데이트
-========================= */
+/* 업데이트 */
 
 function update(){
 
@@ -730,13 +711,10 @@ function update(){
 
     done.textContent =
         count;
-
 }
 
 
-/* =========================
-   체크 변경
-========================= */
+/* 체크할 때 자동 저장 */
 
 checks.forEach(check=>{
 
@@ -748,9 +726,7 @@ checks.forEach(check=>{
 });
 
 
-/* =========================
-   전체 완료
-========================= */
+/* 전체 완료 */
 
 function checkAll(){
 
@@ -759,13 +735,10 @@ function checkAll(){
     });
 
     update();
-
 }
 
 
-/* =========================
-   초기화
-========================= */
+/* 초기화 */
 
 function resetAll(){
 
@@ -786,7 +759,8 @@ function resetAll(){
 }
 
 
-/* 최초 실행 */
+/* 시작 */
+
 update();
 
 </script>
