@@ -1,55 +1,121 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>영원한 행복 지역대회 청소 자원봉사</title>
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<meta name="theme-color" content="#34495e">
+
+<title>영원한 행복 · 지역대회 자원봉사</title>
 
 <style>
 *{
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
 body{
     margin:0;
-    padding:12px;
-    background:#f3f6fa;
-    font-family:"Noto Sans KR",Arial,sans-serif;
+    background:#f4f6f8;
     color:#222;
+    font-family:
+        "Noto Sans KR",
+        "Apple SD Gothic Neo",
+        sans-serif;
 }
+
+/* =========================
+   상단
+========================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:linear-gradient(
+        135deg,
+        #34495e,
+        #526b82
+    );
+
+    color:white;
+    text-align:center;
+
+    padding:14px 8px 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.18);
+}
+
+.header-title{
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.header-sub{
+    margin-top:4px;
+    font-size:12px;
+    opacity:.92;
+}
+
+/* =========================
+   전체
+========================= */
 
 .container{
-    max-width:700px;
+    width:100%;
+    max-width:900px;
     margin:auto;
+    padding:8px;
 }
 
-.title{
-    background:linear-gradient(135deg,#4f8cff,#7b61ff);
-    color:white;
-    padding:20px 10px;
-    border-radius:18px;
-    text-align:center;
-    margin-bottom:14px;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-}
+/* =========================
+   행사 제목
+========================= */
 
-.title h1{
-    margin:0;
-    font-size:20px;
-}
-
-.title p{
-    margin:6px 0 0;
-    font-size:13px;
-}
-
-/* 표 */
-.table-wrap{
+.event-box{
     background:white;
-    border-radius:16px;
+    border-radius:12px;
+
+    padding:10px 12px;
+    margin-bottom:8px;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,.07);
+}
+
+.event-title{
+    font-size:17px;
+    font-weight:900;
+    color:#34495e;
+}
+
+.event-info{
+    margin-top:4px;
+    font-size:12px;
+    color:#777;
+}
+
+/* =========================
+   표
+========================= */
+
+.table-box{
+    background:white;
+    border-radius:12px;
+
     overflow:hidden;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.08);
 }
 
 table{
@@ -58,207 +124,662 @@ table{
     table-layout:fixed;
 }
 
-th{
-    background:#eef3f9;
-    padding:11px 4px;
-    font-size:13px;
-    border-bottom:1px solid #dce3eb;
+/* 열 너비 */
+
+.col-group{
+    width:42px;
 }
 
-th:first-child{
-    width:19%;
+.col-time{
+    width:72px;
 }
 
-th:nth-child(2){
-    width:43%;
+.col-name{
+    width:auto;
 }
 
-th:nth-child(3),
-th:nth-child(4),
-th:nth-child(5){
-    width:12.6%;
+.col-day{
+    width:46px;
 }
 
-td{
-    padding:13px 4px;
+/* =========================
+   머리글
+========================= */
+
+thead th{
+    background:#e9edf1;
+
+    color:#34495e;
+
+    font-size:12px;
+    font-weight:900;
+
+    padding:8px 3px;
+
+    border-right:
+        1px solid #d5dbe0;
+
+    border-bottom:
+        1px solid #d0d6db;
+}
+
+thead th:last-child{
+    border-right:none;
+}
+
+/* =========================
+   본문
+========================= */
+
+tbody td{
+    height:52px;
+
+    padding:6px 3px;
+
     text-align:center;
-    border-bottom:1px solid #edf0f3;
-    font-size:14px;
+
+    font-size:12px;
+
+    border-right:
+        1px solid #e0e4e7;
+
+    border-bottom:
+        1px solid #e0e4e7;
 }
 
-tr:last-child td{
+tbody tr:last-child td{
     border-bottom:none;
 }
 
-/* 조 */
-.group{
-    font-weight:800;
-    font-size:15px;
+tbody td:last-child{
+    border-right:none;
 }
+
+/* =========================
+   조
+========================= */
+
+.group{
+    background:#f5f7f9;
+
+    color:#34495e;
+
+    font-size:14px;
+    font-weight:900;
+}
+
+/* =========================
+   담당 시간
+========================= */
 
 .time{
-    font-size:13px;
-    font-weight:600;
-    line-height:1.5;
-}
+    color:#555;
 
-/* 이름 */
-.name{
-    text-align:left;
-    font-weight:600;
-    line-height:1.6;
-    word-break:keep-all;
-}
-
-/* 토·일 표시 */
-.weekend{
-    font-weight:800;
-}
-
-/* 체크박스 */
-.check{
-    width:25px;
-    height:25px;
-    cursor:pointer;
-    accent-color:#4f8cff;
-}
-
-/* 완료된 줄 */
-.done{
-    background:#f5fbf7;
-}
-
-.done .name{
-    text-decoration:line-through;
-    opacity:.6;
-}
-
-.footer{
-    text-align:center;
-    color:#8a949e;
     font-size:11px;
-    margin:16px 0 5px;
+    font-weight:700;
+
+    line-height:1.35;
+}
+
+/* =========================
+   자원봉사자
+========================= */
+
+.names{
+    text-align:left !important;
+    padding:5px !important;
+}
+
+.person{
+    display:inline-block;
+
+    margin:2px 1px;
+
+    padding:4px 6px;
+
+    border-radius:7px;
+
+    font-size:11px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+/* 사람별 색 */
+
+.p1{
+    background:#e8f1ff;
+    color:#2455a4;
+}
+
+.p2{
+    background:#e9f8ee;
+    color:#267344;
+}
+
+.p3{
+    background:#fff1df;
+    color:#a65b00;
+}
+
+.p4{
+    background:#f4eaff;
+    color:#7040a0;
+}
+
+.p5{
+    background:#ffe9ec;
+    color:#b53a4b;
+}
+
+.p6{
+    background:#e5f7f7;
+    color:#167070;
+}
+
+.p7{
+    background:#fff6c9;
+    color:#806b00;
+}
+
+.p8{
+    background:#edf0f3;
+    color:#46515c;
+}
+
+/* =========================
+   요일
+========================= */
+
+.friday{
+    color:#4267a8 !important;
+}
+
+.saturday{
+    color:#e67e22 !important;
+}
+
+.sunday{
+    color:#9b59b6 !important;
+}
+
+/* =========================
+   체크 버튼
+========================= */
+
+.check{
+    appearance:none;
+    -webkit-appearance:none;
+
+    width:28px;
+    height:28px;
+
+    background:white;
+
+    border:
+        2px solid #c8cdd2;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    vertical-align:middle;
+}
+
+.check:checked{
+    background:#4caf50;
+    border-color:#4caf50;
+}
+
+.check:checked::after{
+    content:"✓";
+
+    position:absolute;
+
+    left:4px;
+    top:-2px;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:900;
+}
+
+/* =========================
+   완료된 행
+========================= */
+
+tbody tr.completed{
+    background:#f3fbf4;
+}
+
+/* =========================
+   하단
+========================= */
+
+.bottom-box{
+    margin-top:8px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:11px;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,.06);
+
+    text-align:center;
+}
+
+.progress{
+    color:#34495e;
+
+    font-size:13px;
+    font-weight:900;
+}
+
+.progress-number{
+    color:#4caf50;
+
+    font-size:17px;
+}
+
+.buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:9px;
+}
+
+button{
+    border:none;
+
+    border-radius:8px;
+
+    padding:9px 13px;
+
+    font-size:12px;
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.btn-all{
+    background:#34495e;
+    color:white;
+}
+
+.btn-reset{
+    background:#edf0f2;
+    color:#555;
+}
+
+/* =========================
+   작은 휴대폰
+========================= */
+
+@media(max-width:430px){
+
+    .header-title{
+        font-size:18px;
+    }
+
+    .event-title{
+        font-size:15px;
+    }
+
+    .event-info{
+        font-size:11px;
+    }
+
+    thead th{
+        font-size:10px;
+        padding:7px 2px;
+    }
+
+    tbody td{
+        font-size:10px;
+        height:47px;
+        padding:5px 2px;
+    }
+
+    .col-group{
+        width:35px;
+    }
+
+    .col-time{
+        width:64px;
+    }
+
+    .col-day{
+        width:40px;
+    }
+
+    .person{
+        font-size:10px;
+        padding:3px 5px;
+    }
+
+    .check{
+        width:25px;
+        height:25px;
+    }
+
+    .check:checked::after{
+        font-size:18px;
+        left:3px;
+    }
 }
 </style>
 </head>
 
+
 <body>
+
+<!-- =========================
+     상단 제목
+========================= -->
+
+<div class="header">
+
+    <div class="header-title">
+        영원한 행복 · 지역대회
+    </div>
+
+    <div class="header-sub">
+        자원봉사 일정 및 참여 확인
+    </div>
+
+</div>
+
 
 <div class="container">
 
-    <div class="title">
-        <h1>🌸 「영원한 행복」 지역대회</h1>
-        <p>청소 자원봉사 참여표</p>
+    <!-- =========================
+         행사 안내
+    ========================= -->
+
+    <div class="event-box">
+
+        <div class="event-title">
+            📋 자원봉사 일정
+        </div>
+
+        <div class="event-info">
+            금요일 · 토요일 · 일요일
+            &nbsp; | &nbsp;
+            참여 완료 시 ✓ 체크
+        </div>
+
     </div>
 
-    <div class="table-wrap">
+
+    <!-- =========================
+         자원봉사 일정표
+    ========================= -->
+
+    <div class="table-box">
 
         <table>
 
             <thead>
+
                 <tr>
-                    <th>조</th>
-                    <th>봉사자</th>
-                    <th>금<br>요일</th>
-                    <th>토<br>요일</th>
-                    <th>일<br>요일</th>
+
+                    <th class="col-group">
+                        조
+                    </th>
+
+                    <th class="col-time">
+                        담당 시간
+                    </th>
+
+                    <th class="col-name">
+                        자원봉사자
+                    </th>
+
+                    <th class="col-day friday">
+                        금
+                    </th>
+
+                    <th class="col-day saturday">
+                        토
+                    </th>
+
+                    <th class="col-day sunday">
+                        일
+                    </th>
+
                 </tr>
+
             </thead>
+
 
             <tbody>
 
-                <!-- 1조 -->
+                <!-- =====================
+                     1조
+                ====================== -->
+
                 <tr>
-                    <td class="group">🩵 1조<br>
-                        <span class="time">오전 회기 전</span>
+
+                    <td class="group">
+                        1조
                     </td>
 
-                    <td class="name">
-                        노을 · 노아민 ·<br>
-                        강경운 (토·일) ·<br>
-                        김영옥 (토·일)
+                    <td class="time">
+                        오전<br>
+                        09:00~12:00
+                    </td>
+
+                    <td class="names">
+
+                        <span class="person p1">
+                            강경운
+                        </span>
+
+                        <span class="person p2">
+                            김○○
+                        </span>
+
+                        <span class="person p3">
+                            박○○
+                        </span>
+
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="금">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="토">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="일">
                     </td>
+
                 </tr>
 
-                <!-- 2조 -->
+
+                <!-- =====================
+                     2조
+                ====================== -->
+
                 <tr>
-                    <td class="group">💚 2조<br>
-                        <span class="time">오전 회기 중</span>
+
+                    <td class="group">
+                        2조
                     </td>
 
-                    <td class="name">
-                        문홍균 · 문정훈
+                    <td class="time">
+                        오전<br>
+                        09:00~12:00
+                    </td>
+
+                    <td class="names">
+
+                        <span class="person p4">
+                            이○○
+                        </span>
+
+                        <span class="person p5">
+                            정○○
+                        </span>
+
+                        <span class="person p6">
+                            최○○
+                        </span>
+
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="금">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="토">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="일">
                     </td>
+
                 </tr>
 
-                <!-- 3조 -->
+
+                <!-- =====================
+                     3조
+                ====================== -->
+
                 <tr>
-                    <td class="group">💛 3조<br>
-                        <span class="time">휴회 시간</span>
+
+                    <td class="group">
+                        3조
                     </td>
 
-                    <td class="name">
-                        장미정 · 문수현 · 강세민
+                    <td class="time">
+                        오후<br>
+                        13:00~16:00
+                    </td>
+
+                    <td class="names">
+
+                        <span class="person p7">
+                            윤○○
+                        </span>
+
+                        <span class="person p8">
+                            한○○
+                        </span>
+
+                        <span class="person p1">
+                            조○○
+                        </span>
+
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="금">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="토">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="일">
                     </td>
+
                 </tr>
 
-                <!-- 4조 -->
+
+                <!-- =====================
+                     4조
+                ====================== -->
+
                 <tr>
-                    <td class="group">🧡 4조<br>
-                        <span class="time">오후 회기 중</span>
+
+                    <td class="group">
+                        4조
                     </td>
 
-                    <td class="name">
-                        김형욱 · 서혜정
+                    <td class="time">
+                        오후<br>
+                        13:00~16:00
+                    </td>
+
+                    <td class="names">
+
+                        <span class="person p2">
+                            홍○○
+                        </span>
+
+                        <span class="person p3">
+                            송○○
+                        </span>
+
+                        <span class="person p4">
+                            임○○
+                        </span>
+
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="금">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="토">
                     </td>
 
                     <td>
-                        <input type="checkbox" class="check">
+                        <input
+                            type="checkbox"
+                            class="check"
+                            data-day="일">
                     </td>
+
                 </tr>
 
             </tbody>
@@ -267,8 +788,53 @@ tr:last-child td{
 
     </div>
 
-    <div class="footer">
-        체크하면 참여 완료로 표시됩니다.
+
+    <!-- =========================
+         완료 현황
+    ========================= -->
+
+    <div class="bottom-box">
+
+        <div class="progress">
+
+            완료
+
+            <span
+                id="doneCount"
+                class="progress-number">
+                0
+            </span>
+
+            /
+
+            <span id="totalCount">
+                0
+            </span>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button
+                class="btn-all"
+                onclick="checkAll()">
+
+                전체 완료
+
+            </button>
+
+
+            <button
+                class="btn-reset"
+                onclick="resetAll()">
+
+                초기화
+
+            </button>
+
+        </div>
+
     </div>
 
 </div>
@@ -276,24 +842,196 @@ tr:last-child td{
 
 <script>
 
-/* 체크하면 완료 표시 */
-document.querySelectorAll(".check").forEach(function(check){
+/* ==========================================
+   자원봉사 체크 기능
+========================================== */
 
-    check.addEventListener("change",function(){
+const checks =
+    document.querySelectorAll(".check");
 
-        const row = this.closest("tr");
+const doneCount =
+    document.getElementById("doneCount");
 
-        if(this.checked){
-            row.classList.add("done");
+const totalCount =
+    document.getElementById("totalCount");
+
+
+/* 전체 체크 개수 */
+
+totalCount.textContent =
+    checks.length;
+
+
+/* ==========================================
+   저장된 체크 상태 불러오기
+========================================== */
+
+checks.forEach((check,index)=>{
+
+    const saved =
+        localStorage.getItem(
+            "volunteer_check_" + index
+        );
+
+    if(saved === "true"){
+
+        check.checked = true;
+
+    }
+
+});
+
+
+/* ==========================================
+   완료 행 표시
+========================================== */
+
+function updateRows(){
+
+    const rows =
+        document.querySelectorAll(
+            "tbody tr"
+        );
+
+    rows.forEach(row=>{
+
+        const rowChecks =
+            row.querySelectorAll(
+                ".check"
+            );
+
+        let completed = true;
+
+        rowChecks.forEach(check=>{
+
+            if(!check.checked){
+
+                completed = false;
+
+            }
+
+        });
+
+        if(completed){
+
+            row.classList.add(
+                "completed"
+            );
+
         }else{
-            row.classList.remove("done");
+
+            row.classList.remove(
+                "completed"
+            );
+
         }
 
     });
 
+}
+
+
+/* ==========================================
+   상태 저장 + 완료 숫자
+========================================== */
+
+function update(){
+
+    let count = 0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            count++;
+
+        }
+
+        localStorage.setItem(
+            "volunteer_check_" + index,
+            check.checked
+        );
+
+    });
+
+
+    doneCount.textContent =
+        count;
+
+    updateRows();
+
+}
+
+
+/* ==========================================
+   체크할 때마다 자동 저장
+========================================== */
+
+checks.forEach(check=>{
+
+    check.addEventListener(
+        "change",
+        update
+    );
+
 });
+
+
+/* ==========================================
+   전체 완료
+========================================== */
+
+function checkAll(){
+
+    checks.forEach(check=>{
+
+        check.checked = true;
+
+    });
+
+    update();
+
+}
+
+
+/* ==========================================
+   전체 초기화
+========================================== */
+
+function resetAll(){
+
+    const ok =
+        confirm(
+            "금·토·일 자원봉사 완료 표시를 모두 초기화할까요?"
+        );
+
+    if(!ok){
+
+        return;
+
+    }
+
+
+    checks.forEach(check=>{
+
+        check.checked = false;
+
+    });
+
+
+    update();
+
+}
+
+
+/* ==========================================
+   최초 실행
+========================================== */
+
+update();
 
 </script>
 
 </body>
 </html>
+```
